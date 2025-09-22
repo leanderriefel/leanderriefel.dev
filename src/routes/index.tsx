@@ -32,7 +32,11 @@ function Home() {
   const heroItem = useMemo(
     () => ({
       hidden: { opacity: 0, y: 20 },
-      visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: easeOut } },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.55, ease: easeOut },
+      },
     }),
     []
   )
@@ -47,7 +51,11 @@ function Home() {
   const blockItem = useMemo(
     () => ({
       hidden: { opacity: 0, y: 20 },
-      visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: easeOut } },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, ease: easeOut },
+      },
     }),
     []
   )
@@ -58,8 +66,14 @@ function Home() {
         aria-hidden
         className="pointer-events-none absolute inset-0 overflow-hidden"
       >
-        <motion.div style={{ y: yBlob }} className="absolute -top-24 -left-24 w-[40rem] h-[40rem] rounded-full blur-3xl opacity-45 bg-gradient-to-br from-sky-200 to-indigo-100" />
-        <motion.div style={{ y: yBlob }} className="absolute top-56 -right-20 w-[36rem] h-[36rem] rounded-full blur-3xl opacity-25 bg-gradient-to-br from-fuchsia-200 to-rose-100" />
+        <motion.div
+          style={{ y: yBlob }}
+          className="absolute -top-24 -left-24 w-[40rem] h-[40rem] rounded-full blur-3xl opacity-45 bg-gradient-to-br from-sky-200 to-indigo-100"
+        />
+        <motion.div
+          style={{ y: yBlob }}
+          className="absolute top-56 -right-20 w-[36rem] h-[36rem] rounded-full blur-3xl opacity-25 bg-gradient-to-br from-fuchsia-200 to-rose-100"
+        />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
@@ -72,21 +86,39 @@ function Home() {
             className="flex flex-col md:flex-row md:justify-between gap-6 md:gap-8"
           >
             <div className="flex-1 md:max-w-2xl">
-              <motion.p variants={heroItem} className="text-sm tracking-widest uppercase text-slate-400">
+              <motion.p
+                variants={heroItem}
+                className="text-sm tracking-widest uppercase text-slate-400"
+              >
                 Software Engineer
               </motion.p>
-              <motion.h1 variants={heroItem} className="mt-3 text-5xl md:text-7xl font-semibold leading-[1.05]">
+              <motion.h1
+                variants={heroItem}
+                className="mt-3 text-5xl md:text-7xl font-semibold leading-[1.05]"
+              >
                 Leander Riefel
               </motion.h1>
-              <motion.p variants={heroItem} className="mt-5 max-w-2xl text-lg text-slate-600">
+              <motion.p
+                variants={heroItem}
+                className="mt-5 max-w-2xl text-lg text-slate-600"
+              >
                 Building clean, scalable software. Currently working on Ignita.
               </motion.p>
             </div>
-            <motion.div variants={heroItem} className="flex-shrink-0 w-auto mt-8 md:mt-12 max-md:flex max-md:justify-center">
+            <motion.div
+              variants={heroItem}
+              className="flex-shrink-0 w-auto mt-8 md:mt-12 max-md:flex max-md:justify-center"
+            >
               <Signature className="h-auto opacity-90 max-w-none w-64 md:w-80 lg:w-[400px] xl:w-[500px]" />
             </motion.div>
           </motion.div>
-          <motion.div variants={heroItem} initial="hidden" whileInView="visible" viewport={viewport} className="mt-6 flex flex-wrap gap-4">
+          <motion.div
+            variants={heroItem}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+            className="mt-6 flex flex-wrap gap-4"
+          >
             <a
               href="https://ignita.app"
               target="_blank"
@@ -132,7 +164,10 @@ function Home() {
                   viewport={viewport}
                   className="absolute inset-0"
                 >
-                  <motion.div variants={blockItem} className="absolute inset-0 bg-gradient-to-br from-slate-50 via-sky-50 to-indigo-50"></motion.div>
+                  <motion.div
+                    variants={blockItem}
+                    className="absolute inset-0 bg-gradient-to-br from-slate-50 via-sky-50 to-indigo-50"
+                  ></motion.div>
                 </motion.div>
                 <div className="absolute inset-0 flex items-center justify-center p-2 md:p-4">
                   <a
@@ -154,11 +189,21 @@ function Home() {
                 </div>
               </div>
             </div>
-            <motion.div variants={blockContainer} initial="hidden" whileInView="visible" viewport={viewport}>
-              <motion.h2 variants={blockItem} className="text-2xl md:text-3xl font-semibold">
+            <motion.div
+              variants={blockContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+            >
+              <motion.h2
+                variants={blockItem}
+                className="text-2xl md:text-3xl font-semibold"
+              >
                 {project.name}
               </motion.h2>
-              <motion.p variants={blockItem} className="mt-4 text-slate-600">{project.description}</motion.p>
+              <motion.p variants={blockItem} className="mt-4 text-slate-600">
+                {project.description}
+              </motion.p>
               <motion.div variants={blockItem} className="mt-8 flex gap-4">
                 <a
                   href={project.url}
@@ -174,11 +219,23 @@ function Home() {
         </section>
 
         <section className="mt-24 md:mt-32">
-          <motion.h3 variants={blockItem} initial="hidden" whileInView="visible" viewport={viewport} className="text-xl md:text-2xl font-semibold">
+          <motion.h3
+            variants={blockItem}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+            className="text-xl md:text-2xl font-semibold"
+          >
             Skills & Background
           </motion.h3>
           <div className="mt-4 grid md:grid-cols-3 gap-8">
-            <motion.div variants={blockContainer} initial="hidden" whileInView="visible" viewport={viewport} className="md:col-span-2 space-y-4 text-slate-700 leading-relaxed">
+            <motion.div
+              variants={blockContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+              className="md:col-span-2 space-y-4 text-slate-700 leading-relaxed"
+            >
               <motion.p variants={blockItem}>
                 I focus primarily on software engineering, building fast,
                 minimal web applications in TypeScript, mostly with React and
@@ -198,8 +255,17 @@ function Home() {
                 my primary focus is shipping thoughtful, robust software.
               </motion.p>
             </motion.div>
-            <motion.div variants={blockContainer} initial="hidden" whileInView="visible" viewport={viewport} className="space-y-3">
-              <motion.div variants={blockItem} className="rounded-lg border border-slate-200 bg-white p-4">
+            <motion.div
+              variants={blockContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+              className="space-y-3"
+            >
+              <motion.div
+                variants={blockItem}
+                className="rounded-lg border border-slate-200 bg-white p-4"
+              >
                 <div className="text-xs uppercase tracking-wide text-slate-500">
                   Stack
                 </div>
@@ -210,7 +276,10 @@ function Home() {
                   Node.js, Java, Kotlin
                 </div>
               </motion.div>
-              <motion.div variants={blockItem} className="rounded-lg border border-slate-200 bg-white p-4">
+              <motion.div
+                variants={blockItem}
+                className="rounded-lg border border-slate-200 bg-white p-4"
+              >
                 <div className="text-xs uppercase tracking-wide text-slate-500">
                   Also
                 </div>

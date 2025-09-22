@@ -6,6 +6,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router"
+import { Analytics } from "@vercel/analytics/react"
 import appCss from "../styles/app.css?url"
 
 export const Route = createRootRoute({
@@ -49,6 +50,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
       <body>
         {children}
         <Scripts />
+        <Analytics />
       </body>
     </html>
   )
